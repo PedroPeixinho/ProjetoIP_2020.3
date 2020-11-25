@@ -1,6 +1,8 @@
 # game code directory name
 GAMEDIR := src
 
+//teste1
+
 # binary output directory name
 OUTPUTDIR := bin
 
