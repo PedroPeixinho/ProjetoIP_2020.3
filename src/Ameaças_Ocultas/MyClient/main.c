@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     bool redraw = true;
 
     // Display a Green screen
-    al_clear_to_color(al_map_rgb(0, 255, 0));
+    al_clear_to_color(al_map_rgb(0, 130, 0));
     al_flip_display();
 
     // Game loop
@@ -37,7 +37,8 @@ int main(int argc, char *argv[]) {
         // Check if we need to redraw
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
-            al_clear_to_color(al_map_rgb(0, 255, 0));
+            al_clear_to_color(al_map_rgb(0, 130, 0));
+            al_draw_bitmap(imagem, -20, -20, 0);
             al_flip_display();
             redraw = false;
         }
@@ -67,8 +68,6 @@ int initAllegro() {
     }
 
     imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/NovaGrama_novo.png");
-
-    al_draw_bitmap(imagem, 0, 0, 0);
 
     // Create the event queue
     event_queue = al_create_event_queue();
