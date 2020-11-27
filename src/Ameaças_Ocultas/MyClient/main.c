@@ -57,12 +57,18 @@ int initAllegro() {
         return 1;
     }
 
+    al_init_image_addon();
+
     // Create the display
     display = al_create_display(largura, Profundidade);
     if (!display) {
         fprintf(stderr, "Failed to create display.\n");
         return 1;
     }
+
+    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/NovaGrama_novo.png");
+
+    al_draw_bitmap(imagem, 0, 0, 0);
 
     // Create the event queue
     event_queue = al_create_event_queue();
