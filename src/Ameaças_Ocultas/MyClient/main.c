@@ -30,16 +30,10 @@ int main(int argc, char *argv[]) {
     al_clear_to_color(al_map_rgb(0, 128, 0));
     al_flip_display();
 
-    // Start the timer
-    al_start_timer(timer);
-
     // Game loop
     while (running) {
         ALLEGRO_EVENT event;
         ALLEGRO_TIMEOUT timeout;
-
-        // Initialize timeout
-        al_init_timeout(&timeout, 0.06);
 
         // Fetch the event (if one exists)
         bool get_event = al_wait_for_event_until(event_queue, &event, &timeout);
@@ -79,13 +73,6 @@ int initAllegro() {
     // Initialize allegro
     if (!al_init()) {
         fprintf(stderr, "Failed to initialize allegro.\n");
-        return 1;
-    }
-
-    // Initialize the timer
-    timer = al_create_timer(1.0 / FPS);
-    if (!timer) {
-        fprintf(stderr, "Failed to create timer.\n");
         return 1;
     }
 
