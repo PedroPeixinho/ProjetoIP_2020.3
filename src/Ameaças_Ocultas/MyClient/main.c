@@ -1,50 +1,19 @@
 #include "lib.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_image.h>
 
 #define largura 1024
 #define Profundidade 768
 
 #define FPS 60
 
+int initAllegro();
+
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 ALLEGRO_TIMER *timer = NULL;
-
-int initAllegro() {
-    // Initialize allegro
-    if (!al_init()) {
-        fprintf(stderr, "Failed to initialize allegro.\n");
-        return 1;
-    }
-
-    // Initialize the timer
-    timer = al_create_timer(1.0 / FPS);
-    if (!timer) {
-        fprintf(stderr, "Failed to create timer.\n");
-        return 1;
-    }
-
-    // Create the display
-    display = al_create_display(largura, Profundidade);
-    if (!display) {
-        fprintf(stderr, "Failed to create display.\n");
-        return 1;
-    }
-
-    // Create the event queue
-    event_queue = al_create_event_queue();
-    if (!event_queue) {
-        fprintf(stderr, "Failed to create event queue.");
-        return 1;
-    }
-
-    // Register event sources
-    al_register_event_source(event_queue, al_get_display_event_source(display));
-    al_register_event_source(event_queue, al_get_timer_event_source(timer));
-
-    return 0;
-}
 
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
@@ -102,6 +71,41 @@ int main(int argc, char *argv[]) {
     // Clean up
     al_destroy_display(display);
     al_destroy_event_queue(event_queue);
+
+    return 0;
+}
+
+int initAllegro() {
+    // Initialize allegro
+    if (!al_init()) {
+        fprintf(stderr, "Failed to initialize allegro.\n");
+        return 1;
+    }
+
+    // Initialize the timer
+    timer = al_create_timer(1.0 / FPS);
+    if (!timer) {
+        fprintf(stderr, "Failed to create timer.\n");
+        return 1;
+    }
+
+    // Create the display
+    display = al_create_display(largura, Profundidade);
+    if (!display) {
+        fprintf(stderr, "Failed to create display.\n");
+        return 1;
+    }
+
+    // Create the event queue
+    event_queue = al_create_event_queue();
+    if (!event_queue) {
+        fprintf(stderr, "Failed to create event queue.");
+        return 1;
+    }
+
+    // Register event sources
+    al_register_event_source(event_queue, al_get_display_event_source(display));
+    al_register_event_source(event_queue, al_get_timer_event_source(timer));
 
     return 0;
 }
