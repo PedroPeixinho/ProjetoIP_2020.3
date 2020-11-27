@@ -10,6 +10,7 @@
 #define FPS 60
 
 int initAllegro();
+void PrintGrama();
 
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_BITMAP *imagem = NULL;
