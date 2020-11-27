@@ -12,12 +12,12 @@
 int initAllegro();
 
 ALLEGRO_DISPLAY *display = NULL;
-ALLEGRO_BITMAP *imagem = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
-void DesenharGrama(ALLEGRO_BITMAP *imagem);
+void DesenharGrama();
 
-void DesenharParede(ALLEGRO_BITMAP *imagem);
+void DesenharParede();
 
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
@@ -42,8 +42,8 @@ int main(int argc, char *argv[]) {
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
             al_clear_to_color(al_map_rgb(0, 110, 0));
-            DesenharGrama(imagem);
-            DesenharParede(imagem);
+            DesenharGrama();
+            DesenharParede();
             al_flip_display();
             redraw = false;
         }
@@ -72,6 +72,10 @@ int initAllegro() {
         return 1;
     }
 
+    grama = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
+    cerca = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit.png");
+    cerca_vert = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit_vert.png");
+
     // Create the event queue
     event_queue = al_create_event_queue();
     if (!event_queue) {
@@ -85,34 +89,28 @@ int initAllegro() {
     return 0;
 }
 
-void DesenharGrama(ALLEGRO_BITMAP *imagem){
+void DesenharGrama(){
     
     int i, j;
-
-    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
     
     for(i = 0; i < 1024; i += 50){
         
         for(j = 0; j < 768; j += 50){
-            al_draw_bitmap(imagem, i, j, 0);
+            al_draw_bitmap(grama, i, j, 0);
         }
     }
 }
 
-void DesenharParede(ALLEGRO_BITMAP *imagem){
+void DesenharParede(){
     int i;
-
-    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit.png");
     
-    for(i = 0; i < 1024; i += 50){
-        al_draw_bitmap(imagem, i, 0, 0);
-        al_draw_bitmap(imagem, i, 755, 0);
+    for(i = -20; i < 1004; i += 50){
+        al_draw_bitmap(cerca, i, 0, 0);
+        al_draw_bitmap(cerca, i, 755, 0);
     }
-
-    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit_vert.png");
     
-    for(i = 0; i < 768; i += 50){
-        al_draw_bitmap(imagem, 0, i, 0);
-        al_draw_bitmap(imagem, 1011, i, 0);
+    for(i = -20; i < 748; i += 50){
+        al_draw_bitmap(cerca_vert, 0, i, 0);
+        al_draw_bitmap(cerca_vert, 1011, i, 0);
     }
 }
