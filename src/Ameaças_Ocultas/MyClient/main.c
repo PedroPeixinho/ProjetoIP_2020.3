@@ -12,8 +12,8 @@
 int initAllegro();
 
 ALLEGRO_DISPLAY *display = NULL;
+ALLEGRO_BITMAP *imagem = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
-ALLEGRO_TIMER *timer = NULL;
 
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
@@ -33,25 +33,6 @@ int main(int argc, char *argv[]) {
     // Game loop
     while (running) {
         ALLEGRO_EVENT event;
-        ALLEGRO_TIMEOUT timeout;
-
-        // Fetch the event (if one exists)
-        bool get_event = al_wait_for_event_until(event_queue, &event, &timeout);
-
-        // Handle the event
-        if (get_event) {
-            switch (event.type) {
-                case ALLEGRO_EVENT_TIMER:
-                    redraw = true;
-                    break;
-                case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                    running = false;
-                    break;
-                default:
-                    fprintf(stderr, "Unsupported event received: %d\n", event.type);
-                    break;
-            }
-        }
 
         // Check if we need to redraw
         if (redraw && al_is_event_queue_empty(event_queue)) {
@@ -92,7 +73,6 @@ int initAllegro() {
 
     // Register event sources
     al_register_event_source(event_queue, al_get_display_event_source(display));
-    al_register_event_source(event_queue, al_get_timer_event_source(timer));
 
     return 0;
 }
