@@ -114,13 +114,13 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, 1011, i, 0);
     }
 
-    al_draw_bitmap(cerca_vert, 54, 14, 0);
-    al_draw_bitmap(cerca_vert, 165, 14, 0);
-    al_draw_bitmap(cerca_vert, 350, 14, 0);
-    al_draw_bitmap(cerca_vert, 424, 14, 0);
-    al_draw_bitmap(cerca_vert, 498, 14, 0);
-    al_draw_bitmap(cerca_vert, 609, 14, 0);
-    al_draw_bitmap(cerca_vert, 757, 14, 0);
-    al_draw_bitmap(cerca_vert, 831, 14, 0);
-    al_draw_bitmap(cerca_vert, 942, 14, 0);
+    al_draw_bitmap(cerca_vert, 74, 14, 0);
+    al_draw_bitmap(cerca_vert, 185, 14, 0);
+    al_draw_bitmap(cerca_vert, 370, 14, 0);
+    al_draw_bitmap(cerca_vert, 444, 14, 0);
+    al_draw_bitmap(cerca_vert, 518, 14, 0);
+    al_draw_bitmap(cerca_vert, 629, 14, 0);
+    al_draw_bitmap(cerca_vert, 777, 14, 0);
+    al_draw_bitmap(cerca_vert, 851, 14, 0);
+    al_draw_bitmap(cerca_vert, 962, 14, 0);
 }
