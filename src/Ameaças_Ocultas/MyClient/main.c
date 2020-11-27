@@ -104,14 +104,14 @@ void DesenharGrama(){
 void DesenharParede(){
     int i;
     
-    for(i = -20; i < 1004; i += 50){
+    for(i = 0; i < 1024; i += 37){
         al_draw_bitmap(cerca, i, 0, 0);
-        al_draw_bitmap(cerca, i, 755, 0);
+        al_draw_bitmap(cerca, i, 758, 0);
     }
     
-    for(i = -20; i < 748; i += 50){
+    for(i = 0; i < 768; i += 37){
         al_draw_bitmap(cerca_vert, 0, i, 0);
-        al_draw_bitmap(cerca_vert, 1011, i, 0);
+        al_draw_bitmap(cerca_vert, 1014, i, 0);
     }
 
     al_draw_bitmap(cerca_vert, 74, 13, 0);
