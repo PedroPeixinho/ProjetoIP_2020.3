@@ -68,7 +68,7 @@ int initAllegro() {
         return 1;
     }
 
-    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/NovaGrama_novo.png");
+    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
 
     // Create the event queue
     event_queue = al_create_event_queue();
