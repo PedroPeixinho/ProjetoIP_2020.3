@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
     bool redraw = true;
 
     // Display a black screen
-    al_clear_to_color(al_map_rgb(255, 255, 255));
+    al_clear_to_color(al_map_rgb(0, 255, 0));
     al_flip_display();
 
     // Start the timer
