@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     bool redraw = true;
 
     // Display a Green screen
-    al_clear_to_color(al_map_rgb(0, 130, 0));
+    al_clear_to_color(al_map_rgb(0, 110, 0));
     al_flip_display();
 
     // Game loop
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
         // Check if we need to redraw
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
-            al_clear_to_color(al_map_rgb(0, 130, 0));
+            al_clear_to_color(al_map_rgb(0, 110, 0));
             DesenharGrama();
             al_flip_display();
             redraw = false;
@@ -88,9 +88,9 @@ void DesenharGrama(){
     
     int i, j;
     
-    for(i = 0; i < 1024; i += 256){
+    for(i = 0; i < 1024; i += 50){
         
-        for(j = 0; j < 768; j += 256){
+        for(j = 0; j < 768; j += 50){
             al_draw_bitmap(imagem, i, j, 0);
         }
     }
