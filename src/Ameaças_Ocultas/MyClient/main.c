@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
             al_clear_to_color(al_map_rgb(0, 130, 0));
-            al_draw_bitmap(imagem, 256, 256, 0);
+            PrintGrama();
             al_flip_display();
             redraw = false;
         }
