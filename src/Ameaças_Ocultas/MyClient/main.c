@@ -87,10 +87,10 @@ void PrintGrama() {
 
     int aux = 0, aux2 = 0;
     
-    for(int i = 0; i <= 1024; i+lar_imag) {
+    for(int i = 0; i < 1024; i+lar_image) {
         aux += i;
         
-        for(int j = 0; j <= 768; j + alt_image)
+        for(int j = 0; j < 768; j + alt_image)
             aux2 += j;
 
         al_draw_bitmap(imagem, aux, aux2, 0);
