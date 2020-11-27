@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) {
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
             al_clear_to_color(al_map_rgb(0, 255, 0));
+            al_draw_bitmap(imagem, 256, 256, 0);
             al_flip_display();
             redraw = false;
         }
@@ -67,8 +68,6 @@ int initAllegro() {
     }
 
     imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/NovaGrama_novo.png");
-
-    al_draw_bitmap(imagem, 0, 0, 0);
 
     // Create the event queue
     event_queue = al_create_event_queue();
