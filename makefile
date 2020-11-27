@@ -1,8 +1,9 @@
 # game code directory name
-GAMEDIR := src
+GAMEDIR := src/Ameaças_Ocultas/MyClient
 
 # binary output directory name
 OUTPUTDIR := bin
+LIBDIR := src/lib
 
 # name for the output(binary) of the game code
 GAMENAME := game
@@ -19,9 +20,12 @@ RM := rm -f
 MK := mkdir -p
 
 EXT := c
+INC := -I $(LIBDIR)
 
 GAMESOURCES := $(shell find $(GAMEDIR) -type f -name *.$(EXT))
+LIBSOURCES := $(shell find $(LIBDIR) -type f -name *.$(EXT))
 GAMEOBJS := $(subst .$(EXT),.o,$(GAMESOURCES))
+LIBOBJS := $(subst .$(EXT),.o,$(LIBSOURCES))
 
 build: mkdirs buildGAME clean
 
@@ -29,20 +33,20 @@ all: mkdirs buildGAME clean runGAME
 
 run: runGAME
 
-buildGAME: $(GAMEOBJS) 
+buildGAME: $(LIBOBJS) $(GAMEOBJS) 
 	@echo "\n  Linking $(GAMENAME)..."
-	$(CC) -o $(OUTPUTDIR)/$(GAMENAME) $(GAMEOBJS) $(LDLIB) $(CFLAGS)
+	$(CC) -o $(OUTPUTDIR)/$(GAMENAME) $(LIBOBJS) $(GAMEOBJS) $(LDLIB) $(CFLAGS)
 	@echo "\n"
 
 %.o : %.$(EXT)	
-	$(CC) -c $< -o $@ $(CFLAGS)
+	$(CC) -c $< -o $@ $(INC) $(CFLAGS)
 
 mkdirs:
 	$(MK) $(OUTPUTDIR)
 
 clean:
 	@echo "  Cleaning..."
-	$(RM) $(GAMEOBJS) 
+	$(RM) $(LIBOBJS) $(GAMEOBJS) 
 
 runGAME:
 	@echo "\n  Starting to run $(GAMENAME)...\n"; ./$(OUTPUTDIR)/$(GAMENAME)
