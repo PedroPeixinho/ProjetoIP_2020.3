@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <allegro5/allegro.h>
 
+#define largura 1024
+#define Profundidade 768
+
 #define FPS 60
 
 ALLEGRO_DISPLAY *display = NULL;
@@ -23,7 +26,7 @@ int initAllegro() {
     }
 
     // Create the display
-    display = al_create_display(1024, 768);
+    display = al_create_display(largura, Profundidade);
     if (!display) {
         fprintf(stderr, "Failed to create display.\n");
         return 1;
