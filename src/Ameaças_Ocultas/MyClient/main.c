@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     bool running = true;
     bool redraw = true;
 
-    // Display a black screen
+    // Display a Green screen
     al_clear_to_color(al_map_rgb(0, 128, 0));
     al_flip_display();
 
