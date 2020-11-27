@@ -85,8 +85,11 @@ int initAllegro() {
 }
 
 void DesenharGrama(){
+    
     int i, j;
+    
     for(i = 0; i < 1024; i += 256){
+        
         for(j = 0; j < 768; j += 256){
             al_draw_bitmap(imagem, i, j, 0);
         }
