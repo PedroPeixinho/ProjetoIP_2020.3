@@ -23,7 +23,7 @@ int initAllegro() {
     }
 
     // Create the display
-    display = al_create_display(640, 480);
+    display = al_create_display(1024, 768);
     if (!display) {
         fprintf(stderr, "Failed to create display.\n");
         return 1;
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
     bool redraw = true;
 
     // Display a black screen
-    al_clear_to_color(al_map_rgb(0, 0, 0));
+    al_clear_to_color(al_map_rgb(255, 255, 255));
     al_flip_display();
 
     // Start the timer
