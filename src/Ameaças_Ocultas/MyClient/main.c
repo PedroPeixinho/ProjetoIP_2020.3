@@ -6,6 +6,8 @@
 
 #define largura 1024
 #define Profundidade 768
+#define lar_image
+#define alt_image
 
 #define FPS 60
 
