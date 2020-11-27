@@ -15,6 +15,8 @@ ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_BITMAP *imagem = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
+void DesenharGrama();
+
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
 
@@ -38,7 +40,7 @@ int main(int argc, char *argv[]) {
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
             al_clear_to_color(al_map_rgb(0, 130, 0));
-            al_draw_bitmap(imagem, -20, -20, 0);
+            DesenharGrama();
             al_flip_display();
             redraw = false;
         }
@@ -80,4 +82,13 @@ int initAllegro() {
     al_register_event_source(event_queue, al_get_display_event_source(display));
 
     return 0;
+}
+
+void DesenharGrama(){
+    int i, j;
+    for(i = 0; i < 1024; i += 256){
+        for(j = 0; j < 768; j += 256){
+            al_draw_bitmap(imagem, i, j, 0);
+        }
+    }
 }
