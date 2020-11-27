@@ -6,13 +6,10 @@
 
 #define largura 1024
 #define Profundidade 768
-#define lar_image 84
-#define alt_image 88
 
 #define FPS 60
 
 int initAllegro();
-void PrintGrama();
 
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_BITMAP *imagem = NULL;
@@ -30,7 +27,7 @@ int main(int argc, char *argv[]) {
     bool redraw = true;
 
     // Display a Green screen
-    al_clear_to_color(al_map_rgb(0, 130, 0));
+    al_clear_to_color(al_map_rgb(0, 255, 0));
     al_flip_display();
 
     // Game loop
@@ -40,8 +37,7 @@ int main(int argc, char *argv[]) {
         // Check if we need to redraw
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
-            al_clear_to_color(al_map_rgb(0, 130, 0));
-            PrintGrama();
+            al_clear_to_color(al_map_rgb(0, 255, 0));
             al_flip_display();
             redraw = false;
         }
@@ -70,7 +66,9 @@ int initAllegro() {
         return 1;
     }
 
-    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
+    imagem = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/NovaGrama_novo.png");
+
+    al_draw_bitmap(imagem, 0, 0, 0);
 
     // Create the event queue
     event_queue = al_create_event_queue();
@@ -83,19 +81,4 @@ int initAllegro() {
     al_register_event_source(event_queue, al_get_display_event_source(display));
 
     return 0;
-}
-
-void PrintGrama() {
-
-    int aux = 0, aux2 = 0;
-    
-    for(int i = 0; i < 1024; i+lar_image) {
-        aux += i;
-        
-        for(int j = 0; j < 768; j + alt_image)
-            aux2 += j;
-
-        al_draw_bitmap(imagem, aux, aux2, 0);
-
-    }
 }
