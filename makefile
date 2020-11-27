@@ -6,7 +6,7 @@ OUTPUTDIR := bin
 LIBDIR := src/lib
 
 # name for the output(binary) of the game code
-GAMENAME := Ameaças Ocultas
+GAMENAME := game
 
 # if you want debug information about memory e.g. memory leaks use -fsanitize=address
 # add C flags, like: CFLAGS := -Wall -Werror -Wconversion -Wextra
