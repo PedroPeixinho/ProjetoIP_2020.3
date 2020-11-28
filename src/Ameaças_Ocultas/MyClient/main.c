@@ -109,12 +109,15 @@ void DesenharParede(){
 
     for(i = 0; i < 1024; i += 37){
         al_draw_bitmap(cerca, i, 0, 0);
+        al_draw_bitmap(cerca, i, 8, 0);
+        al_draw_bitmap(cerca, i, 16, 0);
         al_draw_bitmap(cerca, i, 758, 0);
     }
     
     for(i = 0; i < 768; i += 37){
         al_draw_bitmap(cerca_vert, 0, i, 0);
         al_draw_bitmap(cerca_vert, 1014, i, 0);
+        al_draw_bitmap(cerca_vert, 1006, i, 0);
     }
 
     // Desenha primeira linha
