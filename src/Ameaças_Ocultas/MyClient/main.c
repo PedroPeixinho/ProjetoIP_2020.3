@@ -114,21 +114,6 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, 1014, i, 0);
     }
 
-    al_draw_bitmap(cerca_vert, 74, 13, 0);
-    al_draw_bitmap(cerca_vert, 74, 26, 0);
-    al_draw_bitmap(cerca_vert, 185, 13, 0);
-    al_draw_bitmap(cerca_vert, 185, 26, 0);
-    al_draw_bitmap(cerca_vert, 370, 13, 0);
-    al_draw_bitmap(cerca_vert, 444, 13, 0);
-    al_draw_bitmap(cerca_vert, 444, 26, 0);
-    al_draw_bitmap(cerca_vert, 518, 13, 0);
-    al_draw_bitmap(cerca_vert, 518, 26, 0);
-    al_draw_bitmap(cerca_vert, 629, 13, 0);
-    al_draw_bitmap(cerca_vert, 777, 13, 0);
-    al_draw_bitmap(cerca_vert, 777, 26, 0);
-    al_draw_bitmap(cerca_vert, 851, 13, 0);
-    al_draw_bitmap(cerca_vert, 962, 13, 0);
-
     for(i = 148; i <= 296; i += 74){
         al_draw_bitmap(cerca_vert, i, 726, 0);
     }
@@ -185,7 +170,7 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, i, 504, 0);
     }
     al_draw_bitmap(cerca_vert, 407, 504, 0);
-    for(i = 592; i <= 740; i += 37){
+    for(i = 629; i <= 740; i += 37){
         al_draw_bitmap(cerca_vert, i, 504, 0);
     }
     al_draw_bitmap(cerca_vert, 851, 504, 0);
@@ -197,8 +182,21 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 296, 467, 0);
     al_draw_bitmap(cerca_vert, 370, 467, 0);
     al_draw_bitmap(cerca_vert, 407, 467, 0);
-    al_draw_bitmap(cerca_vert, 592, 467, 0);
+    for(i = 467; i >= 97; i -= 37){
+        al_draw_bitmap(cerca_vert, 592, i, 0);
+    }
     al_draw_bitmap(cerca_vert, 629, 467, 0);
     al_draw_bitmap(cerca_vert, 666, 467, 0);
     al_draw_bitmap(cerca_vert, 740, 467, 0); 
+    al_draw_bitmap(cerca_vert, 851, 467, 0); 
+    al_draw_bitmap(cerca_vert, 888, 467, 0); 
+    for(i = 467; i >= 60; i -= 37){
+        al_draw_bitmap(cerca_vert, 925, i, 0);
+    }
+    al_draw_bitmap(cerca_vert, 37, 430, 0); 
+    al_draw_bitmap(cerca_vert, 111, 430, 0);
+    al_draw_bitmap(cerca_vert, 259, 430, 0);
+    al_draw_bitmap(cerca_vert, 333, 430, 0);
+    al_draw_bitmap(cerca_vert, 370, 430, 0);
+    al_draw_bitmap(cerca_vert, 407, 430, 0);
 }
