@@ -102,7 +102,8 @@ void DesenharGrama(){
 }
 
 void DesenharParede(){
-    int i;
+    
+    int i, j = 0;
     
     for(i = 0; i < 1024; i += 37){
         al_draw_bitmap(cerca, i, 0, 0);
@@ -115,6 +116,76 @@ void DesenharParede(){
     }
 
     al_draw_bitmap(cerca, 47, 715, 0);
+    al_draw_bitmap(cerca, 306, 715, 0);
+    al_draw_bitmap(cerca, 750, 715, 0);
+    
+    for(i = 750; j < 3; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 715, 0);
+    }
+
+    al_draw_bitmap(cerca, 10, 752, 0);
+    
+    for(i = 84; j < 5; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 752, 0);
+    }
+
+    for(i = 343; j < 12; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 752, 0);
+    }
+
+    for(i = 861; j < 4; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 752, 0);
+    }
+
+    for(i = 47; j < 20; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 789, 0);
+    }
+
+    for(i = 787; j < 4; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 789, 0);
+    }
+
+    for(i = 10; j < 6; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 826, 0);
+    }
+
+    for(i = 232; j < 3; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 826, 0);
+    }
+
+    for(i = 417; j < 5; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 826, 0);
+    }
+
+    for(i = 195; j < 1; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 863, 0);
+    }
+
+    for(i = 232; j < 4; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 863, 0);
+    }
+
+    for(i = 491; j < 2; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 863, 0);
+    }
+
+    for(i = 787; j < 4; i+=37) {
+        j++;
+        al_draw_bitmap(cerca, i, 863, 0);
+    }
+
 
     for(i = 148; i <= 296; i += 74){
         al_draw_bitmap(cerca_vert, i, 726, 0);
