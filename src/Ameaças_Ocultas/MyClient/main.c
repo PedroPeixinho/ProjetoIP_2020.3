@@ -12,7 +12,7 @@
 int initAllegro();
 
 ALLEGRO_DISPLAY *display = NULL;
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
 void DesenharGrama();
@@ -44,6 +44,8 @@ int main(int argc, char *argv[]) {
             al_clear_to_color(al_map_rgb(0, 110, 0));
             DesenharGrama();
             DesenharParede();
+            al_draw_bitmap(kit, 500, 430, 0);
+            al_draw_bitmap(vacina, 20, 730, 0);
             al_flip_display();
             redraw = false;
         }
@@ -75,6 +77,8 @@ int initAllegro() {
     grama = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
     cerca = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit2.png");
     cerca_vert = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit_vert2.png");
+    kit = al_load_bitmap("/home/mauro/Documentos/ProjetoIP_2020.3/src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/kit.png");
+    vacina = al_load_bitmap("/home/mauro/Documentos/ProjetoIP_2020.3/src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Explosives_and_Medic_Icons_From_Youtube_series_PixelTime.png");
 
     // Create the event queue
     event_queue = al_create_event_queue();
