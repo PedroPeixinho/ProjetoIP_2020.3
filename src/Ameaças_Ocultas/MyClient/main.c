@@ -12,7 +12,7 @@
 int initAllegro();
 
 ALLEGRO_DISPLAY *display = NULL;
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
 void DesenharGrama();
@@ -46,6 +46,7 @@ int main(int argc, char *argv[]) {
             DesenharParede();
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
+            al_draw_bitmap(cearense_doctor, 240, 820,0);
             al_flip_display();
             redraw = false;
         }
@@ -79,6 +80,7 @@ int initAllegro() {
     cerca_vert = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit_vert2.png");
     kit = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/kit.png");
     vacina = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Explosives_and_Medic_Icons_From_Youtube_series_PixelTime.png");
+    cearense_doctor = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/PARADO.png");
 
     // Create the event queue
     event_queue = al_create_event_queue();
