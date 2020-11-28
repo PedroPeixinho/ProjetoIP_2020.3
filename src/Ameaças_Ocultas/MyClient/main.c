@@ -103,8 +103,10 @@ void DesenharGrama(){
 
 void DesenharParede(){
     
-    int i, j = 0;
+    int i, j = 0, aux = 0, num;
     
+    // Desenha borda
+
     for(i = 0; i < 1024; i += 37){
         al_draw_bitmap(cerca, i, 0, 0);
         al_draw_bitmap(cerca, i, 758, 0);
@@ -114,6 +116,8 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, 0, i, 0);
         al_draw_bitmap(cerca_vert, 1014, i, 0);
     }
+
+    // Desenha primeira linha
 
     al_draw_bitmap(cerca, 47, 715, 0);
     al_draw_bitmap(cerca, 306, 715, 0);
@@ -126,92 +130,719 @@ void DesenharParede(){
     
     j = 0;
 
-    al_draw_bitmap(cerca, 10, 752, 0);
+    // Desenha segunda linha
+
+    num = 1;
+
+    al_draw_bitmap(cerca, 10, 715 - 37*num, 0);
     
     for(i = 84; j < 5; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 678, 0);
+        
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 343; j < 12; i+=37) {
+    for(i = aux + 74; j < 12; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 678, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 861; j < 4; i+=37) {
+    for(i = aux + 37; j < 4; i+=37) {
+        
         j++;
-        al_draw_bitmap(cerca, i, 678, 0);
+        
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
+    aux = 0;
     j = 0;
 
+    // Desenha terceira linha
+
+    num = 2;
+    
     for(i = 47; j < 20; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 641, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 787; j < 4; i+=37) {
+    for(i = aux + 37; j < 4; i+=37) {
+        
         j++;
-        al_draw_bitmap(cerca, i, 641, 0);
+        
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
+    aux = 0;
     j = 0;
 
+    // Desenha quarta linha
+
+    num = 3;
+    
     for(i = 10; j < 6; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 604, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 232; j < 3; i+=37) {
+    for(i = aux + 74; j < 3; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 604, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 417; j < 5; i+=37) {
+    for(i = aux + 74; j < 5; i+=37) {
+        
         j++;
-        al_draw_bitmap(cerca, i, 604, 0);
+        
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha Quinta linha
+
+    num = 4;
+    
+    for(i = 10 + 5*37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 195; j < 1; i+=37) {
+    for(i = aux + 37; j < 4; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 567, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 232; j < 4; i+=37) {
+    for(i = aux + 74 + 37; j < 2; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 567, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 491; j < 2; i+=37) {
+    for(i = aux + 3*74; j < 4; i+=37) {
+        
         j++;
-        al_draw_bitmap(cerca, i, 567, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha sexta linha
+
+    num = 5;
+    
+    for(i = 47; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
-    for(i = 787; j < 4; i+=37) {
+        for(i = aux + 2*74; j < 4; i+=37) {
+        
+        aux = i;
         j++;
-        al_draw_bitmap(cerca, i, 567, 0);
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
     }
     
     j = 0;
 
+    for(i = aux + 74; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 4*74; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha setima linha 
+
+    num = 6;
+
+    for(i = 10; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+
+    j = 0;
+
+    for(i = aux + 5*37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 5*74; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha oitava linha
+
+    num = 7;
+
+    for(i = 47; j < 6; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 9*37; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha nona linha
+
+    num = 8;
+
+    for(10 + 3*74; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 9*37; j < 4; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+    
+    // Desenha decima linha 
+
+    num = 9;
+
+    for(i = 10; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 3; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 11*37; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima primeira linha
+
+    num = 10;
+
+    for(i = 47; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 3; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 6*74; j < 3; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima segunda linha
+
+    num = 11;
+
+    for(i = 10; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 5*37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 5; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 5; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima terceira linha
+
+    num = 12;
+
+    for(i = 47; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 7*37; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 3*37; j < 7; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima quarta linha
+
+    num = 13;
+
+    for(i = 84; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 7*37; j < 3; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha Decima quinta linha
+
+    num = 14;
+
+    for(i = 47; j < 4; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 8; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 2*74; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 1; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima sexta linha
+
+    num = 15;
+
+    for(i = 10; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 3; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 5; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 2*74; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima setima linha
+
+    num = 16;
+
+    for(i = 47; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 3; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 5; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 2*74; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 1; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima oitava
+
+    num = 17;
+
+    for(i = 10 + 3*74; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 5*37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 5*37; j < 2; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 37; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
+
+    // Desenha decima noma linha 
+
+    num = 18;
+
+    for(i = 7*37 + 10; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 8*37; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 6*37; j < 2; i+=37) {
+        
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    aux = 0;
+    j = 0;
 
     for(i = 148; i <= 296; i += 74){
         al_draw_bitmap(cerca_vert, i, 726, 0);
