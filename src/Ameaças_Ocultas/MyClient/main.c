@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
             DesenharParede();
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
-            al_draw_bitmap(cearense_doctor, 240, 820,0);
+            al_draw_bitmap(cearense_doctor, 480, 670,0);
             al_flip_display();
             redraw = false;
         }
