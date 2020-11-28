@@ -267,27 +267,27 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, i, 504, 0);
     }
     al_draw_bitmap(cerca_vert, 407, 504, 0);
+    for(i = 504; i >= 134; i -= 37){
+        al_draw_bitmap(cerca_vert, 592, i, 0);
+    }
     for(i = 629; i <= 740; i += 37){
         al_draw_bitmap(cerca_vert, i, 504, 0);
     }
     al_draw_bitmap(cerca_vert, 851, 504, 0);
     al_draw_bitmap(cerca_vert, 888, 504, 0);
-    for(i = 504; i >= 60; i -= 37){
+    for(i = 504; i >= 97; i -= 37){
         al_draw_bitmap(cerca_vert, 962, i, 0);
     }
     al_draw_bitmap(cerca_vert, 259, 467, 0);
     al_draw_bitmap(cerca_vert, 296, 467, 0);
     al_draw_bitmap(cerca_vert, 370, 467, 0);
     al_draw_bitmap(cerca_vert, 407, 467, 0);
-    for(i = 467; i >= 97; i -= 37){
-        al_draw_bitmap(cerca_vert, 592, i, 0);
-    }
     al_draw_bitmap(cerca_vert, 629, 467, 0);
     al_draw_bitmap(cerca_vert, 666, 467, 0);
     al_draw_bitmap(cerca_vert, 740, 467, 0); 
     al_draw_bitmap(cerca_vert, 851, 467, 0); 
     al_draw_bitmap(cerca_vert, 888, 467, 0); 
-    for(i = 467; i >= 60; i -= 37){
+    for(i = 467; i >= 97; i -= 37){
         al_draw_bitmap(cerca_vert, 925, i, 0);
     }
     al_draw_bitmap(cerca_vert, 37, 430, 0); 
@@ -308,7 +308,7 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 629, 393, 0);
     al_draw_bitmap(cerca_vert, 703, 393, 0);
     al_draw_bitmap(cerca_vert, 851, 393, 0);
-    for(i = 393; i >= 23; i -= 37){
+    for(i = 393; i >= 60; i -= 37){
         al_draw_bitmap(cerca_vert, 888, i, 0);
     }
     al_draw_bitmap(cerca_vert, 148, 356, 0);
@@ -333,4 +333,68 @@ void DesenharParede(){
     }
     al_draw_bitmap(cerca_vert, 555, 282, 0);
     al_draw_bitmap(cerca_vert, 666, 282, 0);
+    al_draw_bitmap(cerca_vert, 37, 245, 0);
+    al_draw_bitmap(cerca_vert, 111, 245, 0);
+    al_draw_bitmap(cerca_vert, 259, 245, 0);
+    al_draw_bitmap(cerca_vert, 333, 245, 0);
+    al_draw_bitmap(cerca_vert, 370, 245, 0);
+    al_draw_bitmap(cerca_vert, 407, 245, 0);
+    al_draw_bitmap(cerca_vert, 518, 245, 0);
+    al_draw_bitmap(cerca_vert, 555, 245, 0);
+    al_draw_bitmap(cerca_vert, 629, 245, 0);
+    al_draw_bitmap(cerca_vert, 703, 245, 0);
+    al_draw_bitmap(cerca_vert, 74, 208, 0);
+    al_draw_bitmap(cerca_vert, 370, 208, 0);
+    al_draw_bitmap(cerca_vert, 518, 208, 0);
+    al_draw_bitmap(cerca_vert, 555, 208, 0);
+    al_draw_bitmap(cerca_vert, 629, 208, 0);
+    al_draw_bitmap(cerca_vert, 666, 208, 0);
+    al_draw_bitmap(cerca_vert, 740, 208, 0);
+    al_draw_bitmap(cerca_vert, 851, 208, 0);
+    al_draw_bitmap(cerca_vert, 222, 171, 0);
+    al_draw_bitmap(cerca_vert, 333, 171, 0);
+    al_draw_bitmap(cerca_vert, 555, 171, 0);
+    al_draw_bitmap(cerca_vert, 629, 171, 0);
+    al_draw_bitmap(cerca_vert, 666, 171, 0);
+    al_draw_bitmap(cerca_vert, 777, 171, 0);
+    al_draw_bitmap(cerca_vert, 814, 171, 0);
+    al_draw_bitmap(cerca_vert, 851, 171, 0);
+    al_draw_bitmap(cerca_vert, 111, 134, 0);
+    al_draw_bitmap(cerca_vert, 259, 134, 0);
+    al_draw_bitmap(cerca_vert, 370, 134, 0);
+    al_draw_bitmap(cerca_vert, 629, 134, 0);
+    al_draw_bitmap(cerca_vert, 666, 134, 0);
+    al_draw_bitmap(cerca_vert, 703, 134, 0);
+    al_draw_bitmap(cerca_vert, 814, 134, 0);
+    al_draw_bitmap(cerca_vert, 851, 134, 0);
+    al_draw_bitmap(cerca_vert, 37, 97, 0);
+    al_draw_bitmap(cerca_vert, 111, 97, 0);
+    al_draw_bitmap(cerca_vert, 148, 97, 0);
+    al_draw_bitmap(cerca_vert, 222, 97, 0);
+    al_draw_bitmap(cerca_vert, 296, 97, 0);
+    for(i = 407; i <= 703; i += 74){
+        al_draw_bitmap(cerca_vert, i, 97, 0);
+    }
+    for(i = 666; i <= 814; i += 74){
+        al_draw_bitmap(cerca_vert, i, 97, 0);
+    }
+    for(i = 37; i <= 259; i += 37){
+        al_draw_bitmap(cerca_vert, i, 60, 0);
+    }
+    al_draw_bitmap(cerca_vert, 333, 60, 0);
+    for(i = 407; i <= 592; i += 37){
+        al_draw_bitmap(cerca_vert, i, 60, 0);
+    }
+    for(i = 666; i <= 814; i += 37){
+        al_draw_bitmap(cerca_vert, i, 60, 0);
+    }
+    al_draw_bitmap(cerca_vert, 74, 23, 0);
+    al_draw_bitmap(cerca_vert, 185, 23, 0);
+    al_draw_bitmap(cerca_vert, 370, 23, 0);
+    al_draw_bitmap(cerca_vert, 444, 23, 0);
+    al_draw_bitmap(cerca_vert, 518, 23, 0);
+    al_draw_bitmap(cerca_vert, 629, 23, 0);
+    al_draw_bitmap(cerca_vert, 777, 23, 0);
+    al_draw_bitmap(cerca_vert, 851, 23, 0);
+    al_draw_bitmap(cerca_vert, 962, 23, 0);
 }
