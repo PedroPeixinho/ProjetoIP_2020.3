@@ -383,7 +383,7 @@ void DesenharParede(){
 
     num = 8;
 
-    for(i = 10 + 3*74; j < 1; i+=37) {
+    for(i = 10 + 3*74+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -553,7 +553,7 @@ void DesenharParede(){
 
     num = 13;
 
-    for(i = 84; j < 1; i+=37) {
+    for(i = 84+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -759,7 +759,7 @@ void DesenharParede(){
 
     num = 17;
 
-    for(i = 10 + 3*74; j < 1; i+=37) {
+    for(i = 10 + 3*74+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -813,7 +813,7 @@ void DesenharParede(){
 
     num = 18;
 
-    for(i = 7*37 + 10; j < 1; i+=37) {
+    for(i = 7*37 + 10+37; j < 1; i+=37) {
         
         aux = i;
         j++;
