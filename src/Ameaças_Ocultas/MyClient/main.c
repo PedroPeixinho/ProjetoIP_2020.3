@@ -120,10 +120,9 @@ void DesenharParede(){
     // Desenha primeira linha
 
     al_draw_bitmap(cerca, 47, 715, 0);
-    al_draw_bitmap(cerca, 306+37, 715, 0);
-    al_draw_bitmap(cerca, 750+37, 715, 0);
+    al_draw_bitmap(cerca, 47+8*37, 715, 0);
     
-    for(i = 750+37; j < 3; i+=37) {
+    for(i = (47+8*37)+(13*37); j < 3; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 715, 0);
     }
@@ -146,7 +145,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 12; i+=37) {
+    for(i = aux + 74+37; j < 12; i+=37) {
         
         aux = i;
         j++;
@@ -156,7 +155,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = aux + 37+37; j < 4; i+=37) {
         
         j++;
         
@@ -180,7 +179,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = aux + 37+37; j < 4; i+=37) {
         
         j++;
         
@@ -204,7 +203,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 3; i+=37) {
+    for(i = aux + 74+37; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -214,7 +213,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 5; i+=37) {
+    for(i = aux + 74+37; j < 5; i+=37) {
         
         j++;
         
@@ -238,7 +237,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = aux + 37+37; j < 4; i+=37) {
         
         aux = i;
         j++;
@@ -248,7 +247,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74 + 37; j < 2; i+=37) {
+    for(i = aux + 74 + 37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -258,7 +257,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 3*74; j < 4; i+=37) {
+    for(i = aux + 3*74+37; j < 4; i+=37) {
         
         j++;
 
@@ -282,7 +281,7 @@ void DesenharParede(){
     
     j = 0;
 
-        for(i = aux + 2*74; j < 4; i+=37) {
+        for(i = aux + 2*74+37; j < 4; i+=37) {
         
         aux = i;
         j++;
@@ -292,7 +291,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 1; i+=37) {
+    for(i = aux + 74+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -302,7 +301,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 4*74; j < 2; i+=37) {
+    for(i = aux + 4*74+37; j < 2; i+=37) {
         
         j++;
 
@@ -326,7 +325,7 @@ void DesenharParede(){
 
     j = 0;
 
-    for(i = aux + 5*37; j < 1; i+=37) {
+    for(i = aux + 5*37+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -336,7 +335,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 5*74; j < 2; i+=37) {
+    for(i = aux + 5*74+37; j < 2; i+=37) {
         
         j++;
 
@@ -360,7 +359,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 1; i+=37) {
+    for(i = aux + 37+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -370,7 +369,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 9*37; j < 2; i+=37) {
+    for(i = aux + 9*37+37; j < 2; i+=37) {
         
         j++;
 
@@ -394,7 +393,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 9*37; j < 4; i+=37) {
+    for(i = aux + 9*37+37; j < 4; i+=37) {
         
         j++;
 
@@ -418,7 +417,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 3; i+=37) {
+    for(i = aux + 74+37; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -428,7 +427,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 11*37; j < 2; i+=37) {
+    for(i = aux + 11*37+37; j < 2; i+=37) {
         
         j++;
 
@@ -452,7 +451,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 3; i+=37) {
+    for(i = aux + 74+37; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -462,7 +461,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 6*74; j < 3; i+=37) {
+    for(i = aux + 6*74+37; j < 3; i+=37) {
         
         j++;
 
@@ -486,7 +485,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 5*37; j < 1; i+=37) {
+    for(i = aux + 5*37+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -496,7 +495,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 5; i+=37) {
+    for(i = aux + 74+37; j < 5; i+=37) {
         
         aux = i;
         j++;
@@ -506,7 +505,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 5; i+=37) {
+    for(i = aux + 74+37; j < 5; i+=37) {
         
         j++;
 
@@ -530,7 +529,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 7*37; j < 2; i+=37) {
+    for(i = aux + 7*37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -540,7 +539,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 3*37; j < 7; i+=37) {
+    for(i = aux + 3*37+37; j < 7; i+=37) {
         
         j++;
 
@@ -564,7 +563,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = aux + 37+37; j < 4; i+=37) {
         
         aux = i;
         j++;
@@ -574,7 +573,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 74; j < 2; i+=37) {
+    for(i = aux + 74+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -584,7 +583,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 7*37; j < 3; i+=37) {
+    for(i = aux + 7*37+37; j < 3; i+=37) {
         
         j++;
 
@@ -608,7 +607,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 8; i+=37) {
+    for(i = aux + 37+37; j < 8; i+=37) {
         
         aux = i;
         j++;
@@ -618,7 +617,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 2*74; j < 2; i+=37) {
+    for(i = aux + 2*74+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -628,7 +627,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 1; i+=37) {
+    for(i = aux + 37+37; j < 1; i+=37) {
         
         j++;
 
@@ -652,7 +651,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 3; i+=37) {
+    for(i = aux + 37+37; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -662,7 +661,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 2; i+=37) {
+    for(i = aux + 37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -672,7 +671,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 5; i+=37) {
+    for(i = aux + 37+37; j < 5; i+=37) {
         
         aux = i;
         j++;
@@ -682,7 +681,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 2*74; j < 2; i+=37) {
+    for(i = aux + 2*74+37; j < 2; i+=37) {
         
         j++;
 
@@ -706,7 +705,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 3; i+=37) {
+    for(i = aux + 37+37; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -716,7 +715,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 2; i+=37) {
+    for(i = aux + 37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -726,7 +725,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 5; i+=37) {
+    for(i = aux + 37+37; j < 5; i+=37) {
         
         aux = i;
         j++;
@@ -736,7 +735,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 2*74; j < 2; i+=37) {
+    for(i = aux + 2*74+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -746,7 +745,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 1; i+=37) {
+    for(i = aux + 37+37; j < 1; i+=37) {
         
         j++;
 
@@ -770,7 +769,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 2; i+=37) {
+    for(i = aux + 37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -780,7 +779,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 5*37; j < 1; i+=37) {
+    for(i = aux + 5*37+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -790,7 +789,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 5*37; j < 2; i+=37) {
+    for(i = aux + 5*37+37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -800,7 +799,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 37; j < 2; i+=37) {
+    for(i = aux + 37+37; j < 2; i+=37) {
         
         j++;
 
@@ -824,7 +823,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 8*37; j < 1; i+=37) {
+    for(i = aux + 8*37+37; j < 1; i+=37) {
         
         aux = i;
         j++;
@@ -834,7 +833,7 @@ void DesenharParede(){
     
     j = 0;
 
-    for(i = aux + 6*37; j < 2; i+=37) {
+    for(i = aux + 6*37+37; j < 2; i+=37) {
         
         j++;
 
