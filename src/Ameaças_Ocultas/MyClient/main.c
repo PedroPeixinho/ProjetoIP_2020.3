@@ -383,7 +383,17 @@ void DesenharParede(){
 
     num = 8;
 
-    for(10 + 3*74; j < 1; i+=37) {
+    for(i = 10 + 3*74; j < 1; i+=37) {
+        
+        aux = i;
+        j++;
+
+        al_draw_bitmap(cerca, i, 715 - 37*num, 0);
+    }
+    
+    j = 0;
+
+    for(i = aux + 74; j < 1; i+=37) {
         
         aux = i;
         j++;
