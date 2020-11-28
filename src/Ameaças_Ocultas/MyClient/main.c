@@ -123,6 +123,7 @@ void DesenharParede(){
         j++;
         al_draw_bitmap(cerca, i, 715, 0);
     }
+    j = 0;
 
     al_draw_bitmap(cerca, 10, 752, 0);
     
@@ -130,61 +131,73 @@ void DesenharParede(){
         j++;
         al_draw_bitmap(cerca, i, 752, 0);
     }
+    j = 0;
 
     for(i = 343; j < 12; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 752, 0);
     }
+    j = 0;
 
     for(i = 861; j < 4; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 752, 0);
     }
+    j = 0;
 
     for(i = 47; j < 20; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 789, 0);
     }
+    j = 0;
 
     for(i = 787; j < 4; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 789, 0);
     }
+    j = 0;
 
     for(i = 10; j < 6; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 826, 0);
     }
+    j = 0;
 
     for(i = 232; j < 3; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 826, 0);
     }
+    j = 0;
 
     for(i = 417; j < 5; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 826, 0);
     }
+    j = 0;
 
     for(i = 195; j < 1; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 863, 0);
     }
+    j = 0;
 
     for(i = 232; j < 4; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 863, 0);
     }
+    j = 0;
 
     for(i = 491; j < 2; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 863, 0);
     }
+    j = 0;
 
     for(i = 787; j < 4; i+=37) {
         j++;
         al_draw_bitmap(cerca, i, 863, 0);
     }
+    j = 0;
 
 
     for(i = 148; i <= 296; i += 74){
