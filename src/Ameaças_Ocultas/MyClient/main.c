@@ -103,7 +103,7 @@ void DesenharGrama(){
 
 void DesenharParede(){
     
-    int i, j = 0, aux = 0, num;
+    int i, j = 0, aux = 0, num, recebe = 0;
     
     // Desenha borda
 
@@ -145,8 +145,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 74; j < 12; i+=37) {
+    for(i = recebe + 74; j < 12; i+=37) {
         
         aux = i;
         j++;
@@ -155,6 +156,7 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
     for(i = aux + 37; j < 4; i+=37) {
         
@@ -165,6 +167,7 @@ void DesenharParede(){
     
     aux = 0;
     j = 0;
+    recebe = 0;
 
     // Desenha terceira linha
 
@@ -179,8 +182,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = recebe + 37; j < 4; i+=37) {
         
         j++;
         
@@ -189,6 +193,7 @@ void DesenharParede(){
     
     aux = 0;
     j = 0;
+    recebe = 0;
 
     // Desenha quarta linha
 
@@ -203,8 +208,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 74; j < 3; i+=37) {
+    for(i = recebe + 74; j < 3; i+=37) {
         
         aux = i;
         j++;
@@ -213,8 +219,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 74; j < 5; i+=37) {
+    for(i = recebe + 74; j < 5; i+=37) {
         
         j++;
         
@@ -223,6 +230,7 @@ void DesenharParede(){
     
     aux = 0;
     j = 0;
+    recebe = 0;
 
     // Desenha Quinta linha
 
@@ -237,8 +245,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 37; j < 4; i+=37) {
+    for(i = recebe + 37; j < 4; i+=37) {
         
         aux = i;
         j++;
@@ -247,8 +256,9 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
-    for(i = aux + 74 + 37; j < 2; i+=37) {
+    for(i = recebe + 74 + 37; j < 2; i+=37) {
         
         aux = i;
         j++;
@@ -257,6 +267,7 @@ void DesenharParede(){
     }
     
     j = 0;
+    recebe = aux;
 
     for(i = aux + 3*74; j < 4; i+=37) {
         
@@ -267,6 +278,7 @@ void DesenharParede(){
     
     aux = 0;
     j = 0;
+    recebe = 0;
 
     // Desenha sexta linha
 
