@@ -227,7 +227,7 @@ void DesenharParede(){
 
     num = 4;
     
-    for(i = 10 + 5*37; j < 1; i+=37) {
+    for(i = 10 + 6*37; j < 1; i+=37) {
         
         aux = i;
         j++;
