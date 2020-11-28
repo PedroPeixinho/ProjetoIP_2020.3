@@ -179,4 +179,8 @@ void DesenharParede(){
         al_draw_bitmap(cerca_vert, i, 541, 0);
     }
     al_draw_bitmap(cerca_vert, 851, 541, 0);
+    for(i = 185; i <= 333; i += 37){
+        al_draw_bitmap(cerca_vert, i, 504, 0);
+    }
+    al_draw_bitmap(cerca_vert, 407, 504, 0);
 }
