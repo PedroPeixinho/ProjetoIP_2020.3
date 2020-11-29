@@ -18,10 +18,6 @@ int initAllegro();
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
-void DesenharGrama();
-
-void DesenharParede();
-
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
 
