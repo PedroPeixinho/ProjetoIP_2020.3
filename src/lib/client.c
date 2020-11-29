@@ -955,7 +955,7 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 962, 23, 0);
 }
 
-int posicaoPersonagem(int **v) {
+int* posicaoPersonagem(int **v) {
 
   int recebe = 0, aux[2] = {0}, i, j;
 
@@ -972,13 +972,13 @@ int posicaoPersonagem(int **v) {
         aux[0] = i;
         aux[1] = j;
 
-        return *aux;
+        return aux;
       }
     }
   }
 }
 
-int posicaoVirus(int **v, int *x) {
+int* posicaoVirus(int **v, int *x) {
 
   int recebe[20] = {0}, aux[40] = {0}, aux2, i, j, k, l, m;
 
@@ -1015,10 +1015,10 @@ int posicaoVirus(int **v, int *x) {
       }
     }
   }
-    return *aux;
+    return aux;
 }
 
-int matriz_Posicao() {
+int** matriz_Posicao() {
 
     int matriz[linha_Matriz][coluna_matriz], i;
     
@@ -1471,7 +1471,7 @@ int matriz_Posicao() {
         }
         matriz[19][26] = 14;
 
-    return **matriz;
+    return matriz;
 }
 
 void desenhaPersonagem(int *x) {
