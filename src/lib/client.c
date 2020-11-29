@@ -1470,6 +1470,15 @@ int matriz_Posicao() {
             matriz[19][i] = 21;
         }
         matriz[19][26] = 14;
-        
+
     return **matriz;
+}
+
+void desenhaPersonagem(int *x) {
+
+    int posicao_p_x = 23 + 37 * x[0] + 37/2;
+    int posicao_p_y = 10 + 37 * x[1] + 37/2;
+
+    al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+
 }

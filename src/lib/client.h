@@ -10,6 +10,7 @@
 
 void DesenharGrama();
 void DesenharParede();
+void desenhaPersonagem(int *x);
 int posicaoPersonagem(int **v);
 int posicaoVirus(int **v, int *x);
 int matriz_Posicao();
