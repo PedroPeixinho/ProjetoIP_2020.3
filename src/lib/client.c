@@ -6,11 +6,11 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-#define linha_Matriz 20
-#define coluna_matriz 27
-
 ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL;
+
 int num_Virus = 20;
+
+int matrizPosicao[posicaoMatriz];
 
 void DesenharGrama(){
     
@@ -955,72 +955,51 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 962, 23, 0);
 }
 
-int* posicaoPersonagem(int **v) {
+int posicaoPersonagem(int *vet) {
 
-  int recebe = 0, aux[2] = {0}, i, j;
+  int recebe = 0, i;
 
+  for(i = 0; i < 540; i++)
+    vet[i];
+  
   srand((unsigned) time(NULL));
-  int num = sizeof v / sizeof *v;
+  int num = sizeof vet / sizeof *vet;
 
-  recebe = *v[rand() % num];
+  recebe = vet[rand() % num];
 
-  for(i = 0; i < linha_Matriz; i++) {
-    for(j = 0; j < coluna_matriz; j++) {
-      
-      if(recebe == v[i][j]) {
-        
-        aux[0] = i;
-        aux[1] = j;
+  return recebe;
 
-        return aux;
-      }
-    }
-  }
 }
 
-int* posicaoVirus(int **v, int *x) {
+int* posicaoVirus(int *vet, int x) {
 
-  int recebe[20] = {0}, aux[40] = {0}, aux2, i, j, k, l, m;
+  int recebe[20] = {0}, aux, i;
+
+  for(i = 0; i < 540; i++)
+    vet[i];
 
   srand((unsigned) time(NULL));
-  int num = sizeof v / sizeof *v;
+  int num = sizeof vet / sizeof *vet;
 
-  recebe[0] = v[x[0]][x[1]];
+  recebe[0] = x;
 
   for(i = 0; i != num_Virus;) {
     
-    aux2 = *v[rand() % num];
+    aux = vet[rand() % num];
     
-    if(aux2 != recebe[i]) {
+    if(aux != recebe[i]) {
         
-        recebe[i] = aux2;
+        recebe[i] = aux;
         i++;
 
     }
   }
-
-  for(i = 0; i < num_Virus; i++) {
-    for(j = 0; i < linha_Matriz; i++) {
-        for(k = 0; j < coluna_matriz; j++) {
-        
-        if(recebe[i] == v[j][k]) {
-            
-            for(l = 0; l < num_Virus - 1; l++) {
-                aux[l] = j;
-                for(m = l + 1; m < num_Virus; m++) {
-                    aux[m] = k;
-                }
-            }
-        }
-      }
-    }
-  }
-    return aux;
+    return recebe;
 }
 
 int** matriz_Posicao() {
 
-    int matriz[linha_Matriz][coluna_matriz], i;
+    int matriz[linha_Matriz][coluna_Matriz], i;
     
     for(i = 0; i < 27; i++){
             matriz[0][i] = 15;
@@ -1474,11 +1453,29 @@ int** matriz_Posicao() {
     return matriz;
 }
 
-void desenhaPersonagem(int *x) {
+void desenhaPersonagem(int x) {
 
-    int posicao_p_x = 23 + 37 * x[0] + 37/2;
-    int posicao_p_y = 10 + 37 * x[1] + 37/2;
+    int var = (x / 27), var2 = (x % 27);
+
+    int posicao_p_x = 23 + 37 * var + 37/2;
+    int posicao_p_y = 10 + 37 * var2 + 37/2;
 
     al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+
+}
+
+void desenhaVirus(int *x) {
+
+    int i;
+
+    for(i = 0; i < 20; i++) {
+        
+        int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
+        int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
+        
+        al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+        
+        }
+        
 
 }
