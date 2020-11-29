@@ -11,6 +11,9 @@
 #define num_elementos_vet 540
 #define linha_Matriz 20
 #define coluna_Matriz 27
+#define largura 1024
+#define Profundidade 768
+#define FPS 60
 
 void DesenharGrama();
 void DesenharParede();

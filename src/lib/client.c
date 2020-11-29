@@ -6,11 +6,14 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+ALLEGRO_DISPLAY *display = NULL;
+ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
 ALLEGRO_EVENT event;
-ALLEGRO_EVENT_QUEUE *fila_eventos = NULL;
+
 int tecla;
 int zona;
+
 bool running = true;
 bool redraw = true;
 
@@ -1522,7 +1525,7 @@ void desenhaVirus(int *x) {
 }
 
 void andar(){
-    al_wait_for_event(fila_eventos, &event);
+    al_wait_for_event(event_queue, &event);
     if (event.type == ALLEGRO_EVENT_KEY_DOWN){
         switch(event.keyboard.keycode){
         case ALLEGRO_KEY_W:

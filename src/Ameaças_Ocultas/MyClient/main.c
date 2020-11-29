@@ -6,25 +6,19 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-extern bool running = true;
-extern bool redraw = true;
+extern bool running;
+extern bool redraw;
 extern int tecla;
 extern int zona;
+extern ALLEGRO_DISPLAY *display;
+extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_EVENT event;
 extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern int recebe[20];
 extern int Vetor_Posicao[num_elementos_vet];
 extern int matriz[20][27];
 
-#define largura 1024
-#define Profundidade 768
-
-#define FPS 60
-
 int initAllegro();
-
-ALLEGRO_DISPLAY *display = NULL;
-ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
 int main(int argc, char *argv[]) {
     printf("O segredo do universo é %d\n", SegredoDoUniverso());
@@ -50,8 +44,8 @@ int main(int argc, char *argv[]) {
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
             desenhaPersonagem(posicaoPersonagem(Vetor_Posicao));
-            //posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
-            //desenhaVirus(recebe);
+            posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
+            desenhaVirus(recebe);
             andar();
             al_flip_display();
             redraw = false;
