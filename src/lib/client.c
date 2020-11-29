@@ -2,6 +2,7 @@
 #include "client.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <time.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
@@ -13,6 +14,8 @@ ALLEGRO_EVENT event;
 
 int tecla;
 int zona;
+
+bool chegou = true;
 
 bool running = true;
 bool redraw = true;
@@ -1553,25 +1556,29 @@ void andar(){
     if (tecla){
         switch (tecla){
         case 1:
-            if(zona % 2 == 0){
+            if(matriz[zona / 27][zona % 27] % 2 == 0){
+                chegou = false;
                 //programa para ele andar 37 pixels
                 zona -= 27;
             }
             break;
         case 2:
-            if(zona % 3 == 0){
+            if(matriz[zona / 27][zona % 27] % 3 == 0){
+                chegou = false;
                 //programa para ele andar 37 pixels
                 zona++;
             }
             break;
         case 3:
-            if(zona % 5 == 0){
+            if(matriz[zona / 27][zona % 27] % 5 == 0){
+                chegou = false;
                 //programa para ele andar 37 pixels
                 zona += 27;
             }
             break;
         case 4:
-            if(zona % 7 == 0){
+            if(matriz[zona / 27][zona % 27] % 7 == 0){
+                chegou = false;
                 //programa para ele andar 37 pixels
                 zona--;
             }

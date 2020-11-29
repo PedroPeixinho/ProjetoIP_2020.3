@@ -6,6 +6,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+extern bool chegou;
 extern bool running;
 extern bool redraw;
 extern int tecla;
@@ -32,6 +33,9 @@ int main(int argc, char *argv[]) {
     al_clear_to_color(al_map_rgb(0, 110, 0));
     al_flip_display();
 
+    zona = posicaoPersonagem(Vetor_Posicao);
+    posicaoVirus(Vetor_Posicao, zona, recebe);
+    
     // Game loop
     while (running) {
         
@@ -43,10 +47,10 @@ int main(int argc, char *argv[]) {
             DesenharParede();
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
-            desenhaPersonagem(posicaoPersonagem(Vetor_Posicao));
-            posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
+            desenhaPersonagem(zona);
             desenhaVirus(recebe);
         }
+        if(chegou)
         andar();
         al_flip_display();
         redraw = false;
