@@ -6,6 +6,11 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+extern bool running = true;
+extern bool redraw = true;
+extern int tecla;
+extern int zona;
+extern ALLEGRO_EVENT event;
 extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern int recebe[20];
 extern int Vetor_Posicao[num_elementos_vet];
@@ -29,16 +34,12 @@ int main(int argc, char *argv[]) {
         return err;
     }
 
-    bool running = true;
-    bool redraw = true;
-
     // Display a Green screen
     al_clear_to_color(al_map_rgb(0, 110, 0));
     al_flip_display();
 
     // Game loop
     while (running) {
-        ALLEGRO_EVENT event;
         
         // Check if we need to redraw
         if (redraw && al_is_event_queue_empty(event_queue)) {
@@ -51,6 +52,7 @@ int main(int argc, char *argv[]) {
             desenhaPersonagem(posicaoPersonagem(Vetor_Posicao));
             //posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
             //desenhaVirus(recebe);
+            andar();
             al_flip_display();
             redraw = false;
         }

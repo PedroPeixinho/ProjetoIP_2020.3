@@ -19,5 +19,6 @@ void desenhaVirus(int *x);
 int posicaoPersonagem(int *vet);
 void posicaoVirus(int *vet, int x, int *recebe);
 void matriz_Posicao(int matriz[][27]);
+void andar();
 
 #endif
