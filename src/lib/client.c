@@ -10,7 +10,7 @@ ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *v
 
 int num_Virus = 20;
 
-int matrizPosicao[posicaoMatriz];
+int vetor_Posicao[num_elementos_vet];
 
 void DesenharGrama(){
     
@@ -959,7 +959,7 @@ int posicaoPersonagem(int *vet) {
 
   int recebe = 0, i;
 
-  for(i = 0; i < 540; i++)
+  for(i = 0; i < num_elementos_vet; i++)
     vet[i];
   
   srand((unsigned) time(NULL));
@@ -975,7 +975,7 @@ int* posicaoVirus(int *vet, int x) {
 
   int recebe[20] = {0}, aux, i;
 
-  for(i = 0; i < 540; i++)
+  for(i = 0; i < num_elementos_vet; i++)
     vet[i];
 
   srand((unsigned) time(NULL));
