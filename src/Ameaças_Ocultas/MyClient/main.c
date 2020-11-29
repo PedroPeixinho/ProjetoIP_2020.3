@@ -49,8 +49,8 @@ int main(int argc, char *argv[]) {
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
             desenhaPersonagem(posicaoPersonagem(Vetor_Posicao));
-            posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
-            desenhaVirus(recebe);
+            //posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
+            //desenhaVirus(recebe);
             al_flip_display();
             redraw = false;
         }

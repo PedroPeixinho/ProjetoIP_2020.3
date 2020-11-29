@@ -961,13 +961,13 @@ int posicaoPersonagem(int *vet) {
 
   int var = 0, i;
 
-  for(i = 0; i < num_elementos_vet; i++)
-    vet[i];
+  /*for(i = 0; i < num_elementos_vet; i++)
+    vet[i];*/
   
   srand((unsigned) time(NULL));
-  int num = sizeof vet / sizeof *vet;
+  //int num = sizeof vet / sizeof *vet;
 
-  var = vet[rand() % num];
+  var = rand() % 539;
 
   return var;
 
