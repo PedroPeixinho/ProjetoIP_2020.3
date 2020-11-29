@@ -1018,7 +1018,7 @@ int posicaoVirus(int **v, int *x) {
     return *aux;
 }
 
-void matriz_Posicao() {
+int matriz_Posicao() {
 
     int matriz[linha_Matriz][coluna_matriz], i;
     
@@ -1470,5 +1470,6 @@ void matriz_Posicao() {
             matriz[19][i] = 21;
         }
         matriz[19][26] = 14;
-
+        
+    return **matriz;
 }
