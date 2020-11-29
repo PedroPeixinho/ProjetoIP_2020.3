@@ -6,7 +6,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *Pink_Virus;
+extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern int matrizPosicao[posicaoMatriz];
 
 #define largura 1024
@@ -82,7 +82,11 @@ int initAllegro() {
     kit = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/kit.png");
     vacina = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Explosives_and_Medic_Icons_From_Youtube_series_PixelTime.png");
     cearense_doctor = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/PARADO.png");
+    Blue_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Blue_Virus.png");
+    Green_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Green_Virus.png");
     Pink_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Pink_Virus.png");
+    Red_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Red_Virus.png");
+    Yellow_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Yellow_Virus.png");
 
     // Create the event queue
     event_queue = al_create_event_queue();

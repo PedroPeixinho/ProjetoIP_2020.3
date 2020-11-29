@@ -6,7 +6,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *Pink_Virus = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
 
 int num_Virus = 20;
 
@@ -1466,14 +1466,50 @@ void desenhaPersonagem(int x) {
 
 void desenhaVirus(int *x) {
 
-    int i;
+    int i, j, k, l, m;
 
-    for(i = 0; i < 20; i++) {
+    for(i = 0; i < 4; i++) {
+        
+        int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
+        int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
+        
+        al_draw_bitmap(Blue_Virus, posicao_p_x, posicao_p_y, 0);
+        
+        }
+    
+    for(j = i + 1; i < 4; i++) {
+        
+        int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
+        int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
+        
+        al_draw_bitmap(Green_Virus, posicao_p_x, posicao_p_y, 0);
+        
+        }
+    
+    for(k = j + 1; i < 4; i++) {
         
         int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
         int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
         
         al_draw_bitmap(Pink_Virus, posicao_p_x, posicao_p_y, 0);
+        
+        }
+    
+    for(l = k + 1; i < 4; i++) {
+        
+        int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
+        int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
+        
+        al_draw_bitmap(Red_Virus, posicao_p_x, posicao_p_y, 0);
+        
+        }
+    
+    for(m = l + 1; i < 4; i++) {
+        
+        int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
+        int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
+        
+        al_draw_bitmap(Yellow_Virus, posicao_p_x, posicao_p_y, 0);
         
         }
         
