@@ -1037,4 +1037,3 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 851, 23, 0);
     al_draw_bitmap(cerca_vert, 962, 23, 0);
 }
-
