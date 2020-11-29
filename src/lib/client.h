@@ -12,5 +12,6 @@ void DesenharGrama();
 void DesenharParede();
 int posicaoPersonagem(int **v);
 int posicaoVirus(int **v, int *x);
+void matriz_Posicao();
 
 #endif
