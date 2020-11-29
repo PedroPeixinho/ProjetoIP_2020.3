@@ -6,15 +6,18 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-extern bool chegou;
+extern int chegou;
 extern bool running;
 extern bool redraw;
 extern int tecla;
+extern int teclaatual;
 extern int zona;
+extern int posicao_p_x;
+extern int posicao_p_y;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_EVENT event;
-extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
+extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern int recebe[20];
 extern int Vetor_Posicao[num_elementos_vet];
 extern int matriz[20][27];
@@ -34,6 +37,8 @@ int main(int argc, char *argv[]) {
     al_flip_display();
 
     zona = posicaoPersonagem(Vetor_Posicao);
+    posicao_p_x = 23 + 37 * (zona / 27) + 37/2;
+    posicao_p_y = 10 + 37 * (zona / 27) + 37/2;
     posicaoVirus(Vetor_Posicao, zona, recebe);
     
     // Game loop
@@ -47,11 +52,10 @@ int main(int argc, char *argv[]) {
             DesenharParede();
             al_draw_bitmap(kit, 500, 430, 0);
             al_draw_bitmap(vacina, 20, 730, 0);
-            desenhaPersonagem(zona);
+            al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
             desenhaVirus(recebe);
         }
-        if(chegou)
-        andar();
+        andar(verificatecla());
         al_flip_display();
         redraw = false;
     }
@@ -85,6 +89,8 @@ int initAllegro() {
     kit = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/kit.png");
     vacina = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Explosives_and_Medic_Icons_From_Youtube_series_PixelTime.png");
     cearense_doctor = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/PARADO.png");
+    cearense_doctor_1 = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/CAMINA 1.png");
+    cearense_doctor_2 = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/CAMINA 2.png");
     Blue_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Blue_Virus.png");
     Green_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Green_Virus.png");
     Pink_Virus = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Pink_Virus.png");

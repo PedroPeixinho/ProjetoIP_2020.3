@@ -17,11 +17,11 @@
 
 void DesenharGrama();
 void DesenharParede();
-void desenhaPersonagem(int x);
 void desenhaVirus(int *x);
 int posicaoPersonagem(int *vet);
 void posicaoVirus(int *vet, int x, int *recebe);
 void matriz_Posicao(int matriz[][27]);
-void andar();
+int verificatecla();
+void andar(int tecla);
 
 #endif

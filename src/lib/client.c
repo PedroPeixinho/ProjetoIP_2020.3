@@ -9,13 +9,16 @@
 
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *cearense_doctor_1 = NULL, *cearense_doctor_2 = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
 ALLEGRO_EVENT event;
 
 int tecla;
+int teclaatual;
 int zona;
+int posicao_p_x;
+int posicao_p_y;
 
-bool chegou = true;
+int chegou = 0;
 
 bool running = true;
 bool redraw = true;
@@ -1464,16 +1467,6 @@ void matriz_Posicao(int matriz[][27]) {
         matriz[19][26] = 14;
 }
 
-void desenhaPersonagem(int x) {
-
-    int var = (x / 27), var2 = (x % 27);
-
-    int posicao_p_x = 23 + 37 * var + 37/2;
-    int posicao_p_y = 10 + 37 * var2 + 37/2;
-
-    al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
-
-}
 
 void desenhaVirus(int *x) {
 
@@ -1527,7 +1520,7 @@ void desenhaVirus(int *x) {
 
 }
 
-void andar(){
+int verificatecla(){
     while(!al_is_event_queue_empty(event_queue)){
         al_wait_for_event(event_queue, &event);
         if (event.type == ALLEGRO_EVENT_KEY_DOWN){
@@ -1557,33 +1550,129 @@ void andar(){
         switch (tecla){
         case 1:
             if(matriz[zona / 27][zona % 27] % 2 == 0){
-                chegou = false;
-                //programa para ele andar 37 pixels
-                zona -= 27;
+                return 1;
             }
             break;
         case 2:
             if(matriz[zona / 27][zona % 27] % 3 == 0){
-                chegou = false;
-                //programa para ele andar 37 pixels
-                zona++;
+                return 2;
             }
             break;
         case 3:
             if(matriz[zona / 27][zona % 27] % 5 == 0){
-                chegou = false;
-                //programa para ele andar 37 pixels
-                zona += 27;
+                return 3;
             }
             break;
         case 4:
             if(matriz[zona / 27][zona % 27] % 7 == 0){
-                chegou = false;
-                //programa para ele andar 37 pixels
-                zona--;
+                return 4;
             }
             break;
         }
         tecla = 0;
+    }
+    return 0;
+}
+
+void andar(int tecla){
+    if(chegou == 0){
+        switch (tecla)
+        {
+        case 1:
+            teclaatual = 1;
+            posicao_p_y--;
+            chegou++;
+            al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            break;
+        case 2:
+            teclaatual = 2;
+            posicao_p_x++;
+            chegou++;
+            al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+            break;
+        case 3:
+            teclaatual = 3;
+            posicao_p_y++;
+            chegou++;
+            al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+            break;
+        case 4:
+            teclaatual = 4;
+            posicao_p_x--;
+            chegou++;
+            al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 1);
+            break;
+        }
+    }else{
+        switch (teclaatual)
+        {
+        case 1:
+            posicao_p_y--;
+            chegou++;
+            if(chegou < 10){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 20){
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 30){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else{
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }
+            break;
+        case 2:
+            posicao_p_x++;
+            chegou++;
+            if(chegou < 10){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 20){
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 30){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else{
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }
+            break;
+        case 3:
+            posicao_p_y++;
+            chegou++;
+            if(chegou < 10){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 20){
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }else if(chegou < 30){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 0);
+            }else{
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 0);
+            }
+            break;
+        case 4:
+            posicao_p_x--;
+            chegou++;
+            if(chegou < 10){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 1);
+            }else if(chegou < 20){
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 1);
+            }else if(chegou < 30){
+                al_draw_bitmap(cearense_doctor_1, posicao_p_x, posicao_p_y, 1);
+            }else{
+                al_draw_bitmap(cearense_doctor_2, posicao_p_x, posicao_p_y, 1);
+            }
+            break;
+        }
+        if(chegou == 37){
+            chegou = 0;
+            al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+            switch (teclaatual)
+            {
+            case 1:
+                zona -= 27;
+            case 2:
+                zona++;
+            case 3:
+                zona += 27;
+            case 4:
+                zona--;
+            }
+        }
     }
 }
