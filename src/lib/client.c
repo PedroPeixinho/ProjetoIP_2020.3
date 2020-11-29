@@ -2,10 +2,15 @@
 #include "client.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+#define linha_Matriz 20
+#define coluna_matriz 27
+
 ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL;
+int num_Virus = 20;
 
 void DesenharGrama(){
     
@@ -948,4 +953,67 @@ void DesenharParede(){
     al_draw_bitmap(cerca_vert, 777, 23, 0);
     al_draw_bitmap(cerca_vert, 851, 23, 0);
     al_draw_bitmap(cerca_vert, 962, 23, 0);
+}
+
+int posicaoPersonagem(int **v) {
+
+  int recebe = 0, aux[2] = {0}, i, j;
+
+  srand((unsigned) time(NULL));
+  int num = sizeof v / sizeof *v;
+
+  recebe = *v[rand() % num];
+
+  for(i = 0; i < 20; i++) {
+    for(j = 0; j < 27; j++) {
+      
+      if(recebe == v[i][j]) {
+        
+        aux[0] = i;
+        aux[1] = j;
+
+        return *aux;
+      }
+    }
+  }
+}
+
+int posicaoVirus(int **v, int *x) {
+
+  int recebe[20] = {0}, aux[40] = {0}, aux2, i, j, k, l, m;
+
+  srand((unsigned) time(NULL));
+  int num = sizeof v / sizeof *v;
+
+  recebe[0] = v[x[0]][x[1]];
+
+  for(i = 0; i != num_Virus;) {
+    
+    aux2 = *v[rand() % num];
+    
+    if(aux2 != recebe[i]) {
+        
+        recebe[i] = aux2;
+        i++;
+
+    }
+  }
+
+  for(i = 0; i < num_Virus; i++) {
+    for(j = 0; i < linha_Matriz; i++) {
+        for(k = 0; j < coluna_matriz; j++) {
+        
+        if(recebe[i] == v[j][k]) {
+            
+            for(l = 0; l < num_Virus - 1; l++) {
+                aux[l] = j;
+                for(m = l + 1; m < num_Virus; m++) {
+                    aux[m] = k;
+                }
+            }
+        }
+      }
+    }
+  }
+    return *aux;
 }

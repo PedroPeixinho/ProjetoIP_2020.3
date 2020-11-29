@@ -4,10 +4,13 @@
 #include "lib.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
 void DesenharGrama();
 void DesenharParede();
+int posicaoPersonagem(int **v);
+int posicaoVirus(int **v, int *x);
 
 #endif
