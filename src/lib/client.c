@@ -973,7 +973,7 @@ int posicaoPersonagem(int *vet) {
 
 }
 
-int* posicaoVirus(int *vet, int x, int *recebe) {
+void posicaoVirus(int *vet, int x, int *recebe) {
 
   int aux, i;
 
@@ -996,10 +996,9 @@ int* posicaoVirus(int *vet, int x, int *recebe) {
 
     }
   }
-    return recebe;
 }
 
-int** matriz_Posicao(int **matriz) {
+void matriz_Posicao(int matriz[][27]) {
 
     int i;
     
@@ -1451,8 +1450,6 @@ int** matriz_Posicao(int **matriz) {
             matriz[19][i] = 21;
         }
         matriz[19][26] = 14;
-
-    return matriz;
 }
 
 void desenhaPersonagem(int x) {

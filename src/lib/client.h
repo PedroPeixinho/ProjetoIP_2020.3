@@ -17,7 +17,7 @@ void DesenharParede();
 void desenhaPersonagem(int x);
 void desenhaVirus(int *x);
 int posicaoPersonagem(int *vet);
-int* posicaoVirus(int *vet, int x, int *recebe);
-int** matriz_Posicao(int **matriz);
+void posicaoVirus(int *vet, int x, int *recebe);
+void matriz_Posicao(int matriz[][27]);
 
 #endif
