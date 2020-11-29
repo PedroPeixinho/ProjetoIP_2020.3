@@ -54,10 +54,14 @@ int main(int argc, char *argv[]) {
             al_draw_bitmap(vacina, 20, 730, 0);
             al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
             desenhaVirus(recebe);
+            al_flip_display();
+            redraw = false;
         }
-        andar(verificatecla());
-        al_flip_display();
-        redraw = false;
+        while(!al_is_event_queue_empty(event_queue)){
+            al_wait_for_event(event_queue, &event);
+            andar(verificatecla());
+            al_flip_display();
+        }
     }
 
     // Clean up
