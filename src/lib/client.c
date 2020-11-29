@@ -6,7 +6,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL;
+ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *virus = NULL;
 
 int num_Virus = 20;
 
@@ -1473,7 +1473,7 @@ void desenhaVirus(int *x) {
         int posicao_p_x = 23 + 37 * (x[i] / 27) + 37/2;
         int posicao_p_y = 10 + 37 * (x[i] % 27) + 37/2;
         
-        al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
+        al_draw_bitmap(virus, posicao_p_x, posicao_p_y, 0);
         
         }
         
