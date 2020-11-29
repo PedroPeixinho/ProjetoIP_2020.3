@@ -983,17 +983,17 @@ void posicaoVirus(int *vet, int x, int *recebe) {
 
   int aux, i;
 
-  for(i = 0; i < num_elementos_vet; i++)
-    vet[i];
+  /*for(i = 0; i < num_elementos_vet; i++)
+    vet[i];*/
 
   srand((unsigned) time(NULL));
-  int num = sizeof vet / sizeof *vet;
+  //int num = sizeof vet / sizeof *vet;
 
   recebe[0] = x;
 
   for(i = 0; i != num_Virus;) {
     
-    aux = vet[rand() % num];
+    aux = rand() % 539;
     
     if(aux != recebe[i]) {
         
