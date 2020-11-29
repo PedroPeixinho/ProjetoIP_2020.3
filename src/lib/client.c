@@ -10,7 +10,9 @@ ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *v
 
 int num_Virus = 20;
 
-int vetor_Posicao[num_elementos_vet];
+int recebe[20] = {0};
+int Vetor_Posicao[num_elementos_vet];
+int matriz[linha_Matriz][coluna_Matriz];
 
 void DesenharGrama(){
     
@@ -957,7 +959,7 @@ void DesenharParede(){
 
 int posicaoPersonagem(int *vet) {
 
-  int recebe = 0, i;
+  int var = 0, i;
 
   for(i = 0; i < num_elementos_vet; i++)
     vet[i];
@@ -965,15 +967,15 @@ int posicaoPersonagem(int *vet) {
   srand((unsigned) time(NULL));
   int num = sizeof vet / sizeof *vet;
 
-  recebe = vet[rand() % num];
+  var = vet[rand() % num];
 
-  return recebe;
+  return var;
 
 }
 
-int* posicaoVirus(int *vet, int x) {
+int* posicaoVirus(int *vet, int x, int *recebe) {
 
-  int recebe[20] = {0}, aux, i;
+  int aux, i;
 
   for(i = 0; i < num_elementos_vet; i++)
     vet[i];
@@ -997,9 +999,9 @@ int* posicaoVirus(int *vet, int x) {
     return recebe;
 }
 
-int** matriz_Posicao() {
+int** matriz_Posicao(int **matriz) {
 
-    int matriz[linha_Matriz][coluna_Matriz], i;
+    int i;
     
     for(i = 0; i < 27; i++){
             matriz[0][i] = 15;
