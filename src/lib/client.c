@@ -1525,28 +1525,30 @@ void desenhaVirus(int *x) {
 }
 
 void andar(){
-    al_wait_for_event(event_queue, &event);
-    if (event.type == ALLEGRO_EVENT_KEY_DOWN){
-        switch(event.keyboard.keycode){
-        case ALLEGRO_KEY_W:
-            tecla = 1;
-            break;
-        case ALLEGRO_KEY_D:
-            tecla = 2;
-            break;
-        case ALLEGRO_KEY_S:
-            tecla = 3;
-            break;
-        case ALLEGRO_KEY_A:
-            tecla = 4;
-            break;
+    while(!al_is_event_queue_empty(event_queue)){
+        al_wait_for_event(event_queue, &event);
+        if (event.type == ALLEGRO_EVENT_KEY_DOWN){
+            switch(event.keyboard.keycode){
+            case ALLEGRO_KEY_W:
+                tecla = 1;
+                break;
+            case ALLEGRO_KEY_D:
+                tecla = 2;
+                break;
+            case ALLEGRO_KEY_S:
+                tecla = 3;
+                break;
+            case ALLEGRO_KEY_A:
+                tecla = 4;
+                break;
+            }
         }
-    }
-    else if (event.type == ALLEGRO_EVENT_KEY_UP){
-        tecla = 5;
-    }
-    else if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE){
-        running = 0;
+        else if (event.type == ALLEGRO_EVENT_KEY_UP){
+            tecla = 5;
+        }
+        else if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE){
+            running = 0;
+        }
     }
     if (tecla){
         switch (tecla){

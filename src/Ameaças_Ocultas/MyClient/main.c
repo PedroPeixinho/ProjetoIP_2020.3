@@ -46,10 +46,10 @@ int main(int argc, char *argv[]) {
             desenhaPersonagem(posicaoPersonagem(Vetor_Posicao));
             posicaoVirus(Vetor_Posicao, posicaoPersonagem(Vetor_Posicao), recebe);
             desenhaVirus(recebe);
-            andar();
-            al_flip_display();
-            redraw = false;
         }
+        andar();
+        al_flip_display();
+        redraw = false;
     }
 
     // Clean up
