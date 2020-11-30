@@ -17,11 +17,12 @@ extern int posicao_p_y;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_EVENT event;
-extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
+extern ALLEGRO_BITMAP *background, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern ALLEGRO_TIMER *timer;
 extern int recebe[20];
 extern int matriz[20][27];
 extern int apertouBotaoPlay, inMenu, inGame, apertouBotaoExit, apertouBotaoHowtoPlay, delay, inChat, inChooseChar;
+extern int remedios;
 
 int initAllegro();
 
@@ -48,8 +49,13 @@ int main(int argc, char *argv[]) {
         if (redraw && al_is_event_queue_empty(event_queue)) {
             // Redraw
             al_clear_to_color(al_map_rgb(0, 110, 0));
-            al_draw_bitmap(kit, 500, 430, 0);
-            al_draw_bitmap(vacina, 20, 730, 0);
+            al_draw_bitmap(background, 0, 0, 0);
+            if(remedios <= 1){
+                al_draw_bitmap(kit, 500, 430, 0);
+            }
+            if(remedios == 0){
+                al_draw_bitmap(vacina, 20, 730, 0);
+            }
             al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
             desenhaVirus();
             al_flip_display();
@@ -59,8 +65,13 @@ int main(int argc, char *argv[]) {
             al_wait_for_event(event_queue, &event);
             if(event.type == ALLEGRO_EVENT_TIMER){
                 al_clear_to_color(al_map_rgb(0, 110, 0));
-                al_draw_bitmap(kit, 500, 430, 0);
-                al_draw_bitmap(vacina, 20, 730, 0);
+                al_draw_bitmap(background, 0, 0, 0);
+                if(remedios <= 1){
+                    al_draw_bitmap(kit, 500, 430, 0);
+                }
+                if(remedios == 0){
+                    al_draw_bitmap(vacina, 20, 730, 0);
+                }
                 if(chegou == 0){
                     al_draw_bitmap(cearense_doctor, posicao_p_x, posicao_p_y, 0);
                 }else{
@@ -90,6 +101,12 @@ int main(int argc, char *argv[]) {
                 al_flip_display();
             }
             andar(verificatecla());
+            if(zona == 513){
+                remedios = 1;
+            }
+            if((remedios == 1) && (zona == 310)){
+                remedios = 2;
+            }
         }
     }
 
@@ -127,9 +144,7 @@ int initAllegro() {
         return 0;
     }
 
-    grama = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/GramaPQ.png");
-    cerca = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit2.png");
-    cerca_vert = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/cerca_edit_vert2.png");
+    background = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/malhorada.png");
     kit = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/kit.png");
     vacina = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/Explosives_and_Medic_Icons_From_Youtube_series_PixelTime.png");
     cearense_doctor = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/Imagens_editadas/PARADO.png");

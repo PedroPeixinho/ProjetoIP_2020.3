@@ -9,7 +9,7 @@
 
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
-ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *cearense_doctor_1 = NULL, *cearense_doctor_2 = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
+ALLEGRO_BITMAP *background = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *cearense_doctor_1 = NULL, *cearense_doctor_2 = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
 ALLEGRO_EVENT event;
 ALLEGRO_TIMER *timer = NULL;
 
@@ -28,6 +28,7 @@ bool redraw = true;
 
 int recebe[20] = {0};
 int matriz[linha_Matriz][coluna_Matriz];
+int remedios = 0;
 
 
 int posicaoPersonagem() {
@@ -499,15 +500,15 @@ void matriz_Posicao(int matriz[][27]) {
 
 void desenhaVirus() {
 
-    al_draw_bitmap(Blue_Virus, posicao_p_x, posicao_p_y, 0);
+    al_draw_bitmap(Blue_Virus, 25, 25, 0);
     
-    al_draw_bitmap(Green_Virus, posicao_p_x, posicao_p_y, 0);
+    al_draw_bitmap(Green_Virus, 25, 25, 0);
         
-    al_draw_bitmap(Pink_Virus, posicao_p_x, posicao_p_y, 0);
+    al_draw_bitmap(Pink_Virus, 25, 25, 0);
         
-    al_draw_bitmap(Red_Virus, posicao_p_x, posicao_p_y, 0);
+    al_draw_bitmap(Red_Virus, 25, 25, 0);
         
-    al_draw_bitmap(Yellow_Virus, posicao_p_x, posicao_p_y, 0);
+    al_draw_bitmap(Yellow_Virus, 25, 25, 0);
 
 }
 
@@ -625,7 +626,7 @@ void andar(int tecla){
     }
 }
 
-void menuGame() {
+/*void menuGame() {
 
     while (inMenu){
 
@@ -682,4 +683,4 @@ void menuGame() {
 
     if(apertouBotaoPlay == 1);
     
-}
+}*/
