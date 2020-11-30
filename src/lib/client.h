@@ -15,8 +15,6 @@
 #define Profundidade 768
 #define FPS 60
 
-void DesenharGrama();
-void DesenharParede();
 void desenhaVirus(int *x);
 int posicaoPersonagem(int *vet);
 void posicaoVirus(int *vet, int x, int *recebe);
