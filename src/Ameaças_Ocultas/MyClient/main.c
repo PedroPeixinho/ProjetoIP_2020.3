@@ -17,11 +17,11 @@ extern int posicao_p_y;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_EVENT event;
-extern ALLEGRO_BITMAP *background, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
+extern ALLEGRO_BITMAP *background, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus, *gif, BackgroundMenu;
 extern ALLEGRO_TIMER *timer;
 extern int recebe[20];
 extern int matriz[20][27];
-extern int apertouBotaoPlay, inMenu, inGame, apertouBotaoExit, apertouBotaoHowtoPlay, delay, inChat, inChooseChar;
+extern int apertouBotaoPlay, inMenu, inGame, apertouBotaoExit, apertouBotaoHowtoPlay, delay, inChat, inChooseChar, menuGameSong, gameIcon, botaoPlay;
 extern int remedios;
 
 int initAllegro();
@@ -124,6 +124,17 @@ int initAllegro() {
         fprintf(stderr, "Failed to initialize allegro.\n");
         return 1;
     }
+
+     //addon de audio
+    if(!al_install_audio()){
+        error_msg("Falha ao inicializar o audio");
+        return 0;
+    }
+ 
+    //addon que da suporte as extensoes de audio
+    if(!al_init_acodec_addon()){
+        error_msg("Falha ao inicializar o codec de audio");
+        return 0;
 
     al_init_image_addon();
 

@@ -9,11 +9,11 @@
 
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
-ALLEGRO_BITMAP *background = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *cearense_doctor_1 = NULL, *cearense_doctor_2 = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL;
+ALLEGRO_BITMAP *background = NULL, *kit = NULL, *vacina = NULL, *cearense_doctor = NULL, *cearense_doctor_1 = NULL, *cearense_doctor_2 = NULL, *Blue_Virus = NULL, *Green_Virus = NULL, *Pink_Virus = NULL, *Red_Virus = NULL, *Yellow_Virus = NULL, *gif = NULL, *BackgroundMenu = NULL;
 ALLEGRO_EVENT event;
 ALLEGRO_TIMER *timer = NULL;
 
-int apertouBotaoPlay = 0, inMenu = 1, inGame = 0, apertouBotaoExit = 0, apertouBotaoHowtoPlay = 0, delay = 0, inChat = 0, inChooseChar;
+int apertouBotaoPlay = 0, inMenu = 1, inGame = 0, apertouBotaoExit = 0, apertouBotaoHowtoPlay = 0, delay = 0, inChat = 0, inChooseChar, menuGameSong, gameIcon, botaoPlay;
 
 int tecla;
 int teclaatual;
@@ -626,12 +626,46 @@ void andar(int tecla){
     }
 }
 
-/*void menuGame() {
+void menuGame() {
 
     while (inMenu){
 
+        menuGameSong = al_load_audio_stream("src/Ameaças_Ocultas/Resources/Tile_Sets/Dungeon 05.ogg", 4, 1024);
+
+    if (!menuGameSong){
+
+        fprintf(stderr, "Falha carregando Dungeon.ogg");
+        return false;
+
+    }
+
         Playsound(menuGameSong);
         al_set_audio_stream_playing(menuGameSong,1);
+
+        BackgroundMenu = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/as-hemacias-tambem-sao-chamadas-globulos-vermelhos-540f557188d27.jpg"); 	
+
+    if (!BackgroundMenu){
+
+        fprintf(stderr, "Falha carregando BackgroundMenu.png\n");
+        return false;
+    }
+
+	gif = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/211467.gif");
+
+    if (!gif){
+
+        fprintf(stderr, "Falha carregando git.png\n");
+        return false;
+    }
+
+    botaoPlay = al_load_bitmap("src/Ameaças_Ocultas/Resources/Tile_Sets/StartGameButton.png");
+
+    if (!gameIcon){
+
+        fprintf(stderr, "Falha carregando StartGameButton01.png\n");
+        return false;
+    }
+    
 
         while(!al_is_event_queue_empty(eventsQueue)){
 
@@ -647,21 +681,6 @@ void andar(int tecla){
 
                     apertouBotaoPlay = 1;
 
-
-            }   else if (menuEvent.mouse.x >= 300 &&  // Verificamos se ele está sobre a região do botao How to play
-                        menuEvent.mouse.x <= 300 + al_get_bitmap_width(botaoHTP) &&
-                        menuEvent.mouse.y >= 420 &&
-                        menuEvent.mouse.y <= 420 + al_get_bitmap_height(botaoHTP) ){
-
-                        apertouBotaoHowtoPlay = 1;
-
-
-            }   else if (menuEvent.mouse.x >= 300 &&  // Verificamos se ele está sobre a região do botao Exit
-                        menuEvent.mouse.x <= 300 + al_get_bitmap_width(botaoExit) &&
-                        menuEvent.mouse.y >= 480 &&
-                        menuEvent.mouse.y <= 480 + al_get_bitmap_height(botaoExit) ){
-
-                        inMenu = 0;
 
             }
 
@@ -683,4 +702,4 @@ void andar(int tecla){
 
     if(apertouBotaoPlay == 1);
     
-}*/
+}
