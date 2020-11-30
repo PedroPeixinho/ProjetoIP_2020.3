@@ -13,6 +13,8 @@ ALLEGRO_BITMAP *grama = NULL, *cerca = NULL, *cerca_vert = NULL, *kit = NULL, *v
 ALLEGRO_EVENT event;
 ALLEGRO_TIMER *timer = NULL;
 
+int apertouBotaoPlay = 0, inMenu = 1, inGame = 0, apertouBotaoExit = 0, apertouBotaoHowtoPlay = 0, delay = 0, inChat = 0, inChooseChar;
+
 int tecla;
 int teclaatual;
 int zona;
@@ -25,19 +27,14 @@ bool running = true;
 bool redraw = true;
 
 int recebe[20] = {0};
-int Vetor_Posicao[num_elementos_vet];
 int matriz[linha_Matriz][coluna_Matriz];
 
 
-int posicaoPersonagem(int *vet) {
+int posicaoPersonagem() {
 
   int var = 0, i;
-
-  /*for(i = 0; i < num_elementos_vet; i++)
-    vet[i];*/
   
   srand((unsigned) time(NULL));
-  //int num = sizeof vet / sizeof *vet;
 
   var = rand() % 539;
 
@@ -626,4 +623,63 @@ void andar(int tecla){
             chegou = 0;
         }
     }
+}
+
+void menuGame() {
+
+    while (inMenu){
+
+        Playsound(menuGameSong);
+        al_set_audio_stream_playing(menuGameSong,1);
+
+        while(!al_is_event_queue_empty(eventsQueue)){
+
+            ALLEGRO_EVENT menuEvent;
+            al_wait_for_event(eventsQueue, &menuEvent);
+
+            if (menuEvent.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN){
+
+                if (menuEvent.mouse.x >= 300 &&  // Verificamos se ele está sobre a região do botao play
+                        menuEvent.mouse.x <= 300 + al_get_bitmap_width(botaoPlay) &&
+                        menuEvent.mouse.y >= 350 &&
+                        menuEvent.mouse.y <= 350 + al_get_bitmap_height(botaoPlay) ){
+
+                    apertouBotaoPlay = 1;
+
+
+            }   else if (menuEvent.mouse.x >= 300 &&  // Verificamos se ele está sobre a região do botao How to play
+                        menuEvent.mouse.x <= 300 + al_get_bitmap_width(botaoHTP) &&
+                        menuEvent.mouse.y >= 420 &&
+                        menuEvent.mouse.y <= 420 + al_get_bitmap_height(botaoHTP) ){
+
+                        apertouBotaoHowtoPlay = 1;
+
+
+            }   else if (menuEvent.mouse.x >= 300 &&  // Verificamos se ele está sobre a região do botao Exit
+                        menuEvent.mouse.x <= 300 + al_get_bitmap_width(botaoExit) &&
+                        menuEvent.mouse.y >= 480 &&
+                        menuEvent.mouse.y <= 480 + al_get_bitmap_height(botaoExit) ){
+
+                        inMenu = 0;
+
+            }
+
+        }   else if (menuEvent.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+
+                int resposta;
+
+                resposta = al_show_native_message_box(main_window,"Ameaça Oculta", "Deseja sair do programa?","",NULL,ALLEGRO_MESSAGEBOX_YES_NO);
+
+                if (resposta == 1){
+
+                    allegroEnd();
+                    return 0;
+
+                }
+            }
+
+        }
+
+    if(apertouBotaoPlay == 1);
+    
 }

@@ -15,9 +15,9 @@
 #define Profundidade 768
 #define FPS 60
 
-void desenhaVirus(int *x);
-int posicaoPersonagem(int *vet);
-void posicaoVirus(int *vet, int x, int *recebe);
+void desenhaVirus();
+int posicaoPersonagem();
+void posicaoVirus(int x, int *recebe);
 void matriz_Posicao(int matriz[][27]);
 int verificatecla();
 void andar(int tecla);

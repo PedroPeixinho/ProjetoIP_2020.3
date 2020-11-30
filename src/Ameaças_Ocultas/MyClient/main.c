@@ -20,8 +20,8 @@ extern ALLEGRO_EVENT event;
 extern ALLEGRO_BITMAP *grama, *cerca, *cerca_vert, *kit, *vacina, *cearense_doctor, *cearense_doctor_1, *cearense_doctor_2, *Blue_Virus, *Green_Virus, *Pink_Virus, *Red_Virus, *Yellow_Virus;
 extern ALLEGRO_TIMER *timer;
 extern int recebe[20];
-extern int Vetor_Posicao[num_elementos_vet];
 extern int matriz[20][27];
+extern int apertouBotaoPlay, inMenu, inGame, apertouBotaoExit, apertouBotaoHowtoPlay, delay, inChat, inChooseChar;
 
 int initAllegro();
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     al_clear_to_color(al_map_rgb(0, 110, 0));
     al_flip_display();
 
-    zona = posicaoPersonagem(Vetor_Posicao);
+    zona = posicaoPersonagem();
     posicao_p_x = 23 + 37 * (zona / 27) + 37/2;
     posicao_p_y = 10 + 37 * (zona / 27) + 37/2;
     
